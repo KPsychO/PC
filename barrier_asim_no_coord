@@ -1,0 +1,36 @@
+process I {
+
+<await (arrive[left[I] == 1)>;
+
+arrive[left[I] = 0;
+
+<await(arrive[right[I]] == 1>;
+
+arrive[right[I]] = 0;
+arrive[I] = 1;
+
+<await(continue[I] == 1)>;
+
+continue[I] == 0;
+continue[left[I]] = 1;
+continue[right[[I]] = 1;
+}
+
+process R {
+
+<await(arrive[left[R]] == 1)>;
+arrive[left[R]] = 0;
+<await(arrive[right[R]] == 1)>
+arive[right[R]] = 0;
+continue[left[R]] = 1;
+continue[right[R]] = 1;
+
+}
+
+process L {
+
+arrive[L] = 1;
+<await(continue[L] == 1)>
+continue[L] = 0;
+
+}

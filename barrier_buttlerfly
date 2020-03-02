@@ -1,0 +1,14 @@
+barrera(i)
+
+// arrays de ints, no funcionan bools
+
+
+for [ s=1 to numEtapas] {
+
+	arrive[i] = arrive[i+1];
+	// determinar proceso j con quien se coordina i en la etapa s
+	while ( arrive[j] < arrive[i];
+
+}
+
+

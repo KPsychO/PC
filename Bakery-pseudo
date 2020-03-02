@@ -1,0 +1,33 @@
+int turn[1..N] = ([N] 0);
+process CS [i = 1 to N] {
+
+    while (true) {
+
+        <turn[i] = max (turn[1..N]) + 1 >
+        for [j = 1 to N with j != i]
+            <await (turn[i] < turn[j] or turn[j] == 0)>
+        cs;
+        no cs;
+
+    }
+
+}
+
+
+
+
+
+CS1:
+
+turno1 = turno2 + 1;
+
+while(turno1 > turno2 && turno2 != 0);
+
+
+
+
+CS1:
+
+turno2 = turno1 + 1;
+
+while(turno2 >= turno1 && turno1 != 0);

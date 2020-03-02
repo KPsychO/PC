@@ -1,0 +1,17 @@
+process I {
+
+<await(arrive[i] == 0)>
+arrive[i] = 1;
+<await(arrive[j] == 1)>
+arrive[j] = 0;
+
+}
+
+process J {
+
+<await(arrive[j] == 0);>
+arrive[j] =1;
+<await(arrive[i] ==1);>
+arrive[i] = 0;
+
+}
