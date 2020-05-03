@@ -1,0 +1,14 @@
+int nr = 0;
+int nw = 0;
+
+process readers [i = 1 to M]{
+   while(1) {
+      read DB;
+   }
+}
+
+process writer [i = 1 to N]{
+   while(1) {
+      write DB;
+   }
+}

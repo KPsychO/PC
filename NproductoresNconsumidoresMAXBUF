@@ -1,0 +1,36 @@
+int fuf[MAX]
+int ini = 0;
+int fin = 0;
+
+
+sem empty = max; -> lo usa el productor
+sem full = 0; -> lo usa el consumidor
+sem mutexP = 1;
+sem mutexC = 1;
+
+
+process prod[i = 1 to M]{
+
+   while (1) {
+      p(empty); -> decrementar (intentar entrar al semaforo)??
+      p(mutexP);
+      buf[fin] = data();
+      fin = (fin+1)%MAX;
+      v(full); -> aumentar el contador??
+      p(mutexP);
+   }
+
+}
+
+
+process cons[i = 1 to N]{
+   while (1){
+      p(full);
+      p(mutexC);
+      int v =  buf[ini];
+      ini = (ini+1) % MAX;
+      v(empty);
+      v(mutexC);
+   }
+
+}

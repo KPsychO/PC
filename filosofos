@@ -1,0 +1,48 @@
+sem fork[5] = ([5]);
+
+process filosofo [i = 0 to 4]{
+
+   while (!) {
+
+      coger tenedores;
+      comer;
+      soltar tenedor;
+      pensar;
+
+   }
+
+}
+
+process filosofo [i = 1 to 4] {
+   while (1){
+
+      p(fork[i];
+      p(fork[i+1];
+      comer;
+      .
+      .
+      .
+      v(fork[i]);
+      v(fork[i+1);
+      pensar;
+   }
+}
+
+process filosofo [i = 0]{
+
+   while(1){
+
+      p(fork[0]);
+      p(fork[4]);
+
+      .
+      .
+      .
+      
+      v(fork[0]);
+      v(fork[4]);
+
+      pensar
+   }
+
+}
