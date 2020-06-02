@@ -1,0 +1,4 @@
+[
+  { "files": ["patata1.jpeg", "patata2.jpeg"], "user": "user1" },
+  { "files": ["gato1.jpeg", "gato2.jpeg"], "user": "user2" }
+]
