@@ -1,12 +1,12 @@
 package Parte2.Ticket;
 
 public class Incrementor extends Thread {
-	Ticket lock;
+	LockTicketMax lock;
 	Var elem;
 	int id;
 	int n;
 	
-	public Incrementor (int i, int n, Ticket lock, Var elem) {
+	public Incrementor (int i, int n, LockTicketMax lock, Var elem) {
 		this.elem = elem;
 		this.lock = lock;
 		this.id = i;
